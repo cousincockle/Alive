@@ -1,0 +1,177 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: black;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.center:before {
+  background-color: black;
+  content: '';
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+}
+.content {
+  width: 100%;
+    background: white;
+  box-shadow: 5px 8px 20px -5px rgba(0, 0, 0, 0.8);
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.input {
+  opacity: 0;
+  display: none;
+}
+.label {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffffff;
+    top: 0;
+  margin: 0;
+  z-index: 2;
+}
+.label span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.search span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  float: right;
+  color: white;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.search span:hover {
+  color: white;
+  cursor: pointer;
+}
+.content.search {
+  display: inline;
+  float: right;
+}
+.label span:hover {
+  color: white;
+}
+.label:active {
+  background: #f95959;
+}
+.input:focus + .label {
+  z-index: 1;
+}
+.input:checked + .label {
+  background: #f95959;
+  color: white;
+}
+.panel {
+  width: 100%;
+    margin: 30px;
+  display: none;
+  order: 99;
+  top: 40px;
+  background-color: white;
+  position: absolute;
+  animation: appear 0.8s ease;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    top: 45px;
+  }
+  100% {
+    opacity: 1;
+    top: 40px;
+  }
+}
+.input:checked + .label + .panel {
+  display: block;
+}
+h1 {
+  font-size: 16px;
+  font-weight: 200;
+  margin: 0px;
+  margin-bottom: 30px;
+  color: #455d7a;
+}
+h1:after {
+  background-color: #f95959;
+  width: 30px;
+  height: 2px;
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+.panel .p {
+  display: block;
+  padding: 10px 0;
+}
+.panel span {
+  width: 100%;
+  display: block;
+  height: 4px;
+  content: '';
+  margin: 6px 0px;
+  background-color: grey;
+  opacity: 0.2;
+}
